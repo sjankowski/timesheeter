@@ -1,0 +1,15 @@
+---
+layout:
+permalink: /sitemaps.xml
+sitemap_exlude: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">{% for page in site.pages %}{% if page.sitemap_exlude == true %}{% else %}
+      <url>
+        <loc>{{site.base}}{{ page.url }}</loc>{% assign versions=site.pages | where:"ref", page.ref %}
+        {% for version in versions %}<xhtml:link rel="alternate" hreflang="{{ version.lang }}" href="{{site.base}}{{ version.url }}" />{% endfor %}
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>{{ page.sitemap-priority }}</priority>
+      </url>{% endif %}{% endfor %}
+      </urlset>

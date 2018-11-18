@@ -1,0 +1,25 @@
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
+{% for page in pages %}
+  <link rel="alternate" hreflang="{{ page.lang }}" href="{{ page.url }}" />
+{% endfor %}
+
+  <meta name="theme-color" content="#232323">
+  <meta name="msapplication-navbutton-color" content="#232323">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#232323">
+  <meta name="theme-color" content="#ffffff">
+
+</head>

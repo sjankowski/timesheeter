@@ -1,0 +1,57 @@
+---
+title: TIMESHEET HELPER
+permalink: /
+layout: default
+excerpt: Excerpt text
+bodyclasses: 'homepage'
+lang: en
+ref: home
+sitemap-priority: 1
+---
+
+
+<div class="container">
+
+
+  <div class="row mt-3">
+      <div class="col-md-6 card text-center ">
+        <h4 class="mt-2">Pomodoro Timer</h4>
+        <div id="pomodoro"></div>
+      </div>
+      <div class="col-md-6 card  text-center">
+        <h4 class="mt-2">Stopwatch</h4>
+        <div id="stopwatch"></div>
+      </div>
+    </div>
+
+
+
+  <div class="timesheeter">
+    <h4 class="mt-5">Timesheet Rapport Generator</h4>
+  <form id="task-form" class="mb-5">
+    <div class="form-row">
+      <div class="form-group col-md-3">
+    <input type="text" class="form-control" name="projectName" placeholder="Name of project" id="projectName">
+  </div>
+  <div class="form-group col-md-6">
+    <input type="text" class="form-control" name="taskName" placeholder="What have You worked on?" id="task">
+  </div>
+    <div class="form-group col-md-2">
+    <input type="text" class="form-control" name="time" placeholder="Time spent" id="time">
+  </div>
+    <div class="form-group col-md-1">
+    <button class="btn btn-info" id="add-task">Add</button>
+    </div>
+    </div>
+    <small class="form-text text-muted">All three inputs must be filled to add an item!</small>
+  </form>
+
+  <div id="app"></div>
+  </div>
+
+
+
+
+</div>
+
+

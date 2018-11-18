@@ -1,0 +1,44 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300,300italic,700,700italic); 
+
+* {
+  box-sizing: border-box;
+}
+
+
+@mixin fontSize($sizeValue: 13) {
+  font-size: $sizeValue + px; //fallback for old browsers
+  font-size: ($sizeValue / 13) + rem;
+}
+@mixin lineHeight($heightValue: 13) {
+  line-height: $heightValue + px; //fallback for old browsers
+  line-height: ($heightValue / 13) + rem;
+}
+@mixin breakpoint($point) {
+  @if $point == large {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else
+  if $point == medium {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else
+  if $point == small {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+}
+@mixin clearfix() {
+  &:after,
+  &:before {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
